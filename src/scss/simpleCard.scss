@@ -1,0 +1,20 @@
+.simple-card-wide.mdl-card.mdl-shadow--2dp {
+  min-width: 100%;
+  min-height: 300px;
+
+  > .mdl-card__title {
+    color: #fff;
+    height: 250px;
+
+    h2.mdl-card__title-text {
+      width: 100%;
+      margin: -16px;
+      padding: 10px 16px;
+      background: rgba(0,0,0,0.5);
+    }
+  }
+
+  > .mdl-card__menu {
+    color: #fff;
+  }
+}

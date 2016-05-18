@@ -1,9 +1,39 @@
-@import "~animate.css/animate";
-@import "./variables.scss";
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import '~material-design-lite/material';
+@import '~animate.css/animate';
+@import './variables.scss';
+@import './simpleCard.scss';
 
 body {
 	padding: 0;
 	margin: 0;
-	font-family: Roboto, sans-serif;
+	font-family: 'Roboto', 'Helvetica', sans-serif;
 	background-color: $background-color;
+}
+
+.dashboard-wrapper {
+	align-self: center;
+	min-width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	@media (min-width: 1024px) {
+		min-width: 80%;
+	}
+}
+
+.cards-wrapper {
+	.card-item {
+		@extend .simple-card-wide, .mdl-card, .mdl-shadow--2dp;
+		margin-top: 10px;
+		@media (min-width: 640px) {
+			min-width: 48%;
+		}
+	}
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.welcome-card {
+	@extend .simple-card-wide, .mdl-card, .mdl-shadow--2dp;
 }

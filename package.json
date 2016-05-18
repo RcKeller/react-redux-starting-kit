@@ -3,8 +3,8 @@
   "private": true,
   "version": "0.0.1",
   "engines": {
-    "node": "4.2.x",
-    "npm": "3.5.x"
+    "node": "4.4.X",
+    "npm": "3.8.x"
   },
   "description": "Starting Kit for building application using Material Design Lite, React and Redux",
   "repository": {
@@ -48,6 +48,7 @@
     "formsy-react": "^0.17.0",
     "isomorphic-fetch": "^2.1.1",
     "lodash": "^4.6.1",
+    "material-design-lite": "^1.1.3",
     "node-sass": "^3.4.2",
     "object-assign": "^4.0.1",
     "path": "^0.12.7",

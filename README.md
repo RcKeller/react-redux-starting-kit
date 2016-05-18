@@ -14,4 +14,4 @@ Starting Kit for building application using Material Design Lite, React and Redu
 
 ---
 
-[Demo](#TBD)
+[Demo](http://embengineering.github.io/react-redux-starting-kit)

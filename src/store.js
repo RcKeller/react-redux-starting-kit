@@ -1,7 +1,7 @@
 import {applyMiddleware, createStore} from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from '../reducers/index';
-import initialState from '../initialState';
+import rootReducer from './reducers';
+import initialState from './initialState';
 
 const middlewares = [thunk];
 
@@ -11,4 +11,4 @@ if (process.env.NODE_ENV === `development`) {
   middlewares.push(logger);
 }
 
-export default applyMiddleware(...middlewares)(createStore)(rootReducer, initialState);
+export default applyMiddleware(...middlewares)(createStore)(rootReducer, initialState, window.devToolsExtension ? window.devToolsExtension() : f => f);
