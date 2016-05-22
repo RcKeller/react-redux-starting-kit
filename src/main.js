@@ -8,8 +8,10 @@ import './scss/main.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-
-import StaticMiniDashboard from './components/StaticMiniDashboard.jsx';
+import {Provider} from 'react-redux';
+import store from './store';
+import MiniDashboard from './components/MiniDashboard.jsx';
+import * as miniDashboardActions from './actions/miniDashboardActions';
 
 // TEST DATA
 const testData = {
@@ -25,6 +27,13 @@ const testData = {
 };
 
 ReactDOM.render(
-  <StaticMiniDashboard {...testData} />,
+  <Provider store={store}>
+    <MiniDashboard />
+  </Provider>,
   document.getElementById('app')
 );
+
+setTimeout(() => {
+  store.dispatch(miniDashboardActions.displayWelcomeCard(testData.welcomeMsg));
+  store.dispatch(miniDashboardActions.displayCardList(testData.cards));
+});
