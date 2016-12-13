@@ -8,8 +8,8 @@ export default ({ welcomeMsg, cards }) => (
       <div className='mdl-layout mdl-color--grey-100'>
         <div className='dashboard-wrapper'>
           <WelcomeCard {...welcomeMsg} />
+          <CardList cards={cards} />
         </div>
-        <CardList cards={cards} />
       </div>
     </div>
   </div>
