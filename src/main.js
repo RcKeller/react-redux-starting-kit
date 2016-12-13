@@ -1,15 +1,17 @@
-import 'file?name=[name].[ext]!./index.html';
-import 'babel-polyfill';
-import 'fastclick';
-import 'font-awesome-sass-loader';
-import 'material-design-lite';
-import './scss/main.scss';
+import 'file?name=[name].[ext]!./index.html'
+import 'babel-polyfill'
+import 'fastclick'
+import 'font-awesome-sass-loader'
+import 'material-design-lite'
+import './scss/main.scss'
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-
-import StaticMiniDashboard from './components/StaticMiniDashboard.jsx';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import injectTapEventPlugin from 'react-tap-event-plugin'
+import {Provider} from 'react-redux'
+import store from './store'
+import MiniDashboard from './components/MiniDashboard.jsx'
+import * as miniDashboardActions from './actions/miniDashboardActions'
 
 // TEST DATA
 const testData = {
@@ -22,9 +24,16 @@ const testData = {
     {title: 'Foo', msg: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin cursus vitae velit a congue.', imgUrl: 'http://lorempixel.com/500/300/city/'},
     {title: 'Bar', msg: 'Etiam pretium a elit in varius. Ut vel est accumsan, interdum erat sit amet, lacinia risus.', imgUrl: 'http://lorempixel.com/500/300/nature/'}
   ]
-};
+}
 
 ReactDOM.render(
-  <StaticMiniDashboard {...testData} />,
+  <Provider store={store}>
+    <MiniDashboard />
+  </Provider>,
   document.getElementById('app')
-);
+)
+
+setTimeout(() => {
+  store.dispatch(miniDashboardActions.displayWelcomeCard(testData.welcomeMsg))
+  store.dispatch(miniDashboardActions.displayCardList(testData.cards))
+})
