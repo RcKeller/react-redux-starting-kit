@@ -1,3 +1,12 @@
+export default {
+  welcomeCard: {
+    title: '',
+    msg: '',
+    imgUrl: ''
+  },
+  cardList: []
+}
+
 // define application initial model here
 // example:
 // export default {
